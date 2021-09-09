@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔塔</title>
+    <link rel="stylesheet" href="css/mota.css">
+</head>
+
+<body>
+    <div class="gamebox">
+        <canvas id="can" width="550" height="550"></canvas>
+    </div>
+    <div class="showbox">
+        <div class="msg">
+            <div id="hero_blood">♢ 血量：<span>---</span></div>
+            <div id="hero_force">♢ 攻击力：<span>---</span></div>
+            <div id="hero_defense">♢ 防御力：<span>---</span></div>
+            <div id="hero_key">♢ 钥匙：<span>---</span></div>
+            <div id="hero_exp">♢ 经验：<span>---</span></div>
+            <div id="hero_expNeed">♢ 升级所需：<span>---</span></div>
+            <div id="floor">♢ 当前楼层：<span>---</span></div>
+            <div id="regame" style="text-align: center;"><button type="button" style="height: 100%;line-height: 100%;width: 100%;border: 0;background-color: transparent;">重开游戏</button></div>
+        </div>
+        <div class="log">
+            <div></div>
+        </div>
+        <div class="tip">
+            <span class="icon"></span>
+            <P style="text-align: center;">游戏规则</P>
+            <p>▶ 英雄遭遇怪物触发战斗时，由英雄率先攻击。</p>
+            <p>▶ 红色血瓶回血150，蓝色血瓶回血400。</p>
+            <p>▶ 初始化钥匙为3把黄色，3把蓝色，2把红色。</p>
+            <p>▶ 英雄经验值超过当前升级所需数值时升级英雄，并提升英雄1.5攻击力，1防御力，200血量,而升级所需数值按照1.5倍提升。</p>
+            <p>▶ 红色宝石提升2点攻击力，蓝色提升1点防御力。</p>
+            <p>▶ 战斗中每次进攻最少造成1点伤害，交替攻击。</p>
+            <P style="text-align: center;">游戏提示</P>
+            <p>▶ 法师具高攻击低血量。</p>
+            <p>▶ 黑色史莱姆极度危险。</p>
+            <p>▶ 红色骑士高攻击血量中等。</p>
+            <p>▶ 石巨人，高血量高攻击高防御。</p>
+            <p>▶ 优先拾取宝石提升能力，血量一开始不是很重要。</p>
+        </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/main.js">
+    </script>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        let canvas = document.querySelector("#can");
+        let game = new Game(canvas);
+        document.querySelector("#regame>button").addEventListener("click", () => {
+            canvas = document.querySelector("#can");
+            canvas.width = canvas.width
+            game = new Game(canvas)
+        });
+        // 更换贴图
+    </script>
+</body>
+
+</html>
